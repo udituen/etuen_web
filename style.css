@@ -297,6 +297,12 @@
     gap:56px;
     align-items:center;
   }
+  .pronounce{
+  font-size:0.85em;
+  font-weight:400;
+  font-style:italic;
+  color:var(--text-mid);
+}
   @media (max-width:860px){ .name-grid{grid-template-columns:1fr;} }
   .name-visual{
     background:var(--ink);
