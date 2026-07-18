@@ -13,9 +13,11 @@
   }
 
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth; overflow-x:hidden;}
   body{
     margin:0;
+    overflow-x:hidden;
+    max-width:100vw;
     background:var(--paper);
     color:var(--text-dark);
     font-family:'Inter', sans-serif;
@@ -197,13 +199,13 @@
   }
   @keyframes fadeIn{ to{ opacity:1; } }
   @keyframes flyPast{
-    0%{ opacity:0; transform:translate(0px, 40px) scale(0.85) rotate(-6deg); }
+    0%{ opacity:0; transform:translate(40px, 190px) scale(0.85) rotate(-6deg); }
     12%{ opacity:1; }
-    100%{ opacity:1; transform:translate(660px, -78px) scale(1.05) rotate(4deg); }
+    100%{ opacity:1; transform:translate(700px, 72px) scale(1.05) rotate(4deg); }
   }
   @media (prefers-reduced-motion: reduce){
     .big-bird, .small-bird, .flight-path{ animation:none !important; opacity:1; }
-    .small-bird{ transform:translate(660px, -78px) scale(1.05) rotate(4deg); }
+    .small-bird{ transform:translate(700px, 72px) scale(1.05) rotate(4deg); }
   }
 
   /* ---------- SECTION HEADERS ---------- */
