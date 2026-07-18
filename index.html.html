@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Etuen — Small by size. Bold by design.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #2B2018;
+    --ink-2: #372718;
+    --paper: #F5F3EE;
+    --paper-2: #ECE7DC;
+    --text-dark: #241B14;
+    --text-mid: #6B5F52;
+    --amber: #C97B3D;
+    --amber-dim: #A6632E;
+    --moss: #6B7D4F;
+    --line: rgba(255,255,255,0.14);
+    --line-dark: rgba(43,32,24,0.14);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--text-dark);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Space Grotesk', sans-serif;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+  }
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  section{position:relative;}
+  .wrap{
+    max-width:1140px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+  @media (max-width:640px){ .wrap{padding:0 20px;} }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(43,32,24,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 32px;
+    max-width:1140px; margin:0 auto;
+  }
+  .logo{
+    display:flex; align-items:center; gap:10px;
+    color:#fff; font-size:19px; font-weight:600;
+  }
+  .logo-mark{
+    width:24px; height:24px; position:relative; flex-shrink:0;
+  }
+  .logo-mark svg{width:100%;height:100%;}
+  .nav-links{
+    display:flex; align-items:center; gap:36px;
+    list-style:none; margin:0; padding:0;
+  }
+  .nav-links a{
+    color:rgba(255,255,255,0.72);
+    text-decoration:none;
+    font-size:14px;
+    font-weight:500;
+    transition:color .2s ease;
+  }
+  .nav-links a:hover{color:#fff;}
+  .nav-cta{
+    background:var(--amber);
+    color:#fff;
+    padding:10px 18px;
+    border-radius:3px;
+    font-size:14px;
+    font-weight:600;
+    text-decoration:none;
+    white-space:nowrap;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .nav-cta:hover{background:#d68f52; transform:translateY(-1px);}
+
+  @media (max-width:860px){
+    .nav-links{display:none;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+    color:#fff;
+    padding:96px 0 0;
+    overflow:hidden;
+  }
+  .hero-inner{
+    max-width:1140px; margin:0 auto; padding:0 32px;
+    display:flex; flex-direction:column; align-items:center;
+    text-align:center;
+  }
+  .eyebrow{
+    font-size:12px;
+    color:var(--amber);
+    margin-bottom:22px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before, .eyebrow::after{
+    content:"";
+    width:28px; height:1px;
+    background:var(--amber-dim);
+  }
+  .hero h1{
+    font-size:clamp(40px, 7vw, 74px);
+    font-weight:700;
+    line-height:1.04;
+    max-width:820px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--amber);
+  }
+  .hero-sub{
+    margin:26px 0 40px;
+    max-width:560px;
+    font-size:18px;
+    line-height:1.6;
+    color:rgba(255,255,255,0.68);
+  }
+  .hero-ctas{
+    display:flex; gap:16px; flex-wrap:wrap; justify-content:center;
+    margin-bottom:20px;
+  }
+  .btn-primary{
+    background:var(--amber);
+    color:#fff;
+    padding:14px 26px;
+    border-radius:3px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:15px;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .btn-primary:hover{background:#d68f52; transform:translateY(-1px);}
+  .btn-ghost{
+    border:1px solid rgba(255,255,255,0.28);
+    color:#fff;
+    padding:14px 26px;
+    border-radius:3px;
+    text-decoration:none;
+    font-weight:500;
+    font-size:15px;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .btn-ghost:hover{border-color:#fff; background:rgba(255,255,255,0.06);}
+
+  /* Flight scene */
+  .flight-scene{
+    position:relative;
+    width:100%;
+    height:220px;
+    margin-top:24px;
+  }
+  .flight-scene svg{width:100%; height:100%; display:block;}
+  .big-bird{
+    opacity:0;
+    animation:fadeIn 1.2s ease forwards .4s;
+  }
+  .big-bird path{
+    fill:none;
+    stroke:rgba(255,255,255,0.22);
+    stroke-width:1.4;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+  .small-bird{
+    opacity:0;
+    animation:flyPast 2.6s cubic-bezier(.3,.6,.25,1) forwards 1s;
+  }
+  .small-bird path{
+    fill:none;
+    stroke:var(--amber);
+    stroke-width:2;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+  .flight-path{
+    stroke:rgba(201,123,61,0.22);
+    stroke-width:1;
+    stroke-dasharray:3 5;
+    fill:none;
+    opacity:0;
+    animation:fadeIn 1s ease forwards 1s;
+  }
+  @keyframes fadeIn{ to{ opacity:1; } }
+  @keyframes flyPast{
+    0%{ opacity:0; transform:translate(0px, 40px) scale(0.85) rotate(-6deg); }
+    12%{ opacity:1; }
+    100%{ opacity:1; transform:translate(660px, -78px) scale(1.05) rotate(4deg); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .big-bird, .small-bird, .flight-path{ animation:none !important; opacity:1; }
+    .small-bird{ transform:translate(660px, -78px) scale(1.05) rotate(4deg); }
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .section-head{
+    max-width:640px;
+    margin-bottom:52px;
+  }
+  .section-head .mono{
+    font-size:12px; color:var(--moss); margin-bottom:14px; display:block;
+  }
+  .section-head h2{
+    font-size:clamp(28px,4vw,40px);
+    font-weight:600;
+    line-height:1.15;
+    color:var(--text-dark);
+  }
+  .section-head p{
+    margin-top:16px;
+    font-size:16px;
+    color:var(--text-mid);
+    line-height:1.65;
+  }
+
+  /* ---------- OUR NAME ---------- */
+  .our-name{
+    padding:100px 0;
+    background:var(--paper-2);
+  }
+  .name-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:56px;
+    align-items:center;
+  }
+  @media (max-width:860px){ .name-grid{grid-template-columns:1fr;} }
+  .name-visual{
+    background:var(--ink);
+    border-radius:6px;
+    padding:48px 32px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:220px;
+  }
+  .name-visual svg{ width:100%; max-width:220px; height:auto; }
+  .name-visual .flight-mark path{
+    fill:none; stroke-linecap:round; stroke-linejoin:round;
+  }
+  .name-visual .flight-mark .big{ stroke:rgba(255,255,255,0.22); stroke-width:1.6; }
+  .name-visual .flight-mark .small{ stroke:var(--amber); stroke-width:2.4; }
+  .name-copy .mono{ color:var(--moss); font-size:12px; margin-bottom:16px; display:block; }
+  .name-copy h2{ font-size:clamp(26px,3.4vw,34px); font-weight:600; margin-bottom:18px; line-height:1.2; }
+  .name-copy p{ color:var(--text-mid); font-size:15.5px; line-height:1.75; margin:0 0 16px; }
+  .name-copy p:last-child{ margin-bottom:0; }
+  .name-copy strong{ color:var(--text-dark); }
+
+  /* ---------- SERVICES ---------- */
+  .services{ padding:110px 0; }
+  .service-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line-dark);
+    border:1px solid var(--line-dark);
+  }
+  @media (max-width:860px){ .service-grid{grid-template-columns:1fr;} }
+  .service-card{
+    background:var(--paper);
+    padding:40px 32px;
+    display:flex; flex-direction:column;
+    position:relative;
+  }
+  .service-card.featured{ background:var(--ink); color:#fff; }
+  .service-card.featured .service-price,
+  .service-card.featured h3{ color:#fff; }
+  .service-card.featured .service-desc{ color:rgba(255,255,255,0.65); }
+  .service-card.featured .service-list li{ color:rgba(255,255,255,0.85); border-color:rgba(255,255,255,0.14); }
+  .service-card.featured .service-list li::before{ color:var(--amber); }
+  .service-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--amber-dim);
+    margin-bottom:18px;
+  }
+  .service-card.featured .service-tag{ color:var(--amber); }
+  .service-card h3{
+    font-size:24px; font-weight:600; margin-bottom:10px;
+  }
+  .service-desc{
+    font-size:14px; color:var(--text-mid); line-height:1.6; margin-bottom:24px;
+  }
+  .service-price{
+    font-size:15px; font-weight:600; margin-bottom:24px;
+    font-family:'IBM Plex Mono', monospace;
+  }
+  .service-price span{ color:var(--text-mid); font-weight:400; font-size:13px; }
+  .service-card.featured .service-price span{ color:rgba(255,255,255,0.5); }
+  .service-list{ list-style:none; margin:0 0 32px; padding:0; flex-grow:1; }
+  .service-list li{
+    font-size:14px;
+    padding:11px 0;
+    border-top:1px solid var(--line-dark);
+    padding-left:20px;
+    position:relative;
+    color:#3A2C1F;
+  }
+  .service-list li:first-child{ border-top:none; }
+  .service-list li::before{
+    content:"—";
+    position:absolute; left:0; top:11px;
+    color:var(--moss);
+  }
+  .service-link{
+    font-size:14px; font-weight:600; text-decoration:none;
+    display:inline-flex; align-items:center; gap:6px;
+    color:var(--text-dark);
+  }
+  .service-card.featured .service-link{ color:#fff; }
+  .service-link .arrow{ transition:transform .2s ease; }
+  .service-link:hover .arrow{ transform:translateX(4px); }
+
+  /* ---------- APPROACH ---------- */
+  .approach{ padding:0 0 110px; }
+  .approach-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:48px;
+  }
+  @media (max-width:860px){ .approach-grid{grid-template-columns:1fr; gap:40px;} }
+  .step{
+    padding-top:24px;
+    border-top:2px solid var(--text-dark);
+  }
+  .step-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--amber-dim);
+    margin-bottom:16px;
+    display:block;
+  }
+  .step h3{ font-size:20px; font-weight:600; margin-bottom:10px; }
+  .step p{ font-size:14.5px; color:var(--text-mid); line-height:1.65; margin:0; }
+
+  /* ---------- NEXT HORIZON (AI teaser) ---------- */
+  .next-horizon{
+    background:var(--ink);
+    color:#fff;
+    padding:110px 0;
+    overflow:hidden;
+  }
+  .nh-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:64px;
+    align-items:center;
+  }
+  @media (max-width:860px){ .nh-grid{grid-template-columns:1fr;} }
+  .next-horizon .mono{ color:var(--moss); font-size:12px; margin-bottom:18px; display:block; }
+  .next-horizon h2{
+    font-size:clamp(26px,3.6vw,38px);
+    font-weight:600;
+    line-height:1.2;
+    margin-bottom:20px;
+  }
+  .next-horizon p{
+    color:rgba(255,255,255,0.65);
+    font-size:15.5px;
+    line-height:1.7;
+    max-width:460px;
+  }
+  .nh-list{ list-style:none; margin:28px 0 0; padding:0; }
+  .nh-list li{
+    font-size:14.5px;
+    color:rgba(255,255,255,0.8);
+    padding:12px 0;
+    border-top:1px solid var(--line);
+    display:flex; gap:12px; align-items:baseline;
+  }
+  .nh-list li:first-child{ border-top:none; }
+  .nh-list .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    color:var(--amber);
+    border:1px solid rgba(201,123,61,0.45);
+    padding:2px 7px;
+    border-radius:2px;
+    flex-shrink:0;
+  }
+  .nh-panel{
+    border:1px solid var(--line);
+    padding:36px 30px;
+    background:rgba(255,255,255,0.02);
+  }
+  .nh-panel .mono{ color:rgba(255,255,255,0.4); margin-bottom:22px;}
+
+  /* ---------- CONTACT / CTA ---------- */
+  .cta-band{
+    background:var(--paper-2);
+    padding:90px 0;
+    text-align:center;
+  }
+  .cta-band h2{
+    font-size:clamp(28px,4vw,42px);
+    font-weight:600;
+    max-width:640px;
+    margin:0 auto 20px;
+    line-height:1.2;
+  }
+  .cta-band p{
+    color:var(--text-mid);
+    font-size:16px;
+    max-width:480px;
+    margin:0 auto 36px;
+  }
+  .cta-btns{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+  .btn-dark{
+    background:var(--ink);
+    color:#fff;
+    padding:15px 28px;
+    border-radius:3px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:15px;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .btn-dark:hover{ background:#40301f; transform:translateY(-1px); }
+  .btn-outline{
+    border:1px solid rgba(43,32,24,0.3);
+    color:var(--text-dark);
+    padding:15px 28px;
+    border-radius:3px;
+    text-decoration:none;
+    font-weight:500;
+    font-size:15px;
+  }
+  .btn-outline:hover{ border-color:var(--text-dark); }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--ink);
+    color:rgba(255,255,255,0.55);
+    padding:56px 0 32px;
+  }
+  .footer-top{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    flex-wrap:wrap; gap:32px;
+    padding-bottom:40px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:24px;
+  }
+  .footer-brand .logo{ margin-bottom:14px; }
+  .footer-brand p{ font-size:13.5px; max-width:260px; line-height:1.6; margin:0; }
+  .footer-cols{ display:flex; gap:64px; flex-wrap:wrap; }
+  .footer-col h4{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px; letter-spacing:0.06em; text-transform:uppercase;
+    color:rgba(255,255,255,0.4); margin:0 0 16px;
+  }
+  .footer-col a{
+    display:block; font-size:14px; color:rgba(255,255,255,0.68);
+    text-decoration:none; margin-bottom:10px;
+  }
+  .footer-col a:hover{ color:#fff; }
+  .footer-bottom{
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-size:12.5px; color:rgba(255,255,255,0.35);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <div class="logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M2 17 C6 13, 8 9, 11 4" stroke="#C97B3D" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M11 4 C13 8, 16 10, 22 11" stroke="#C97B3D" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M11 4 C9 8, 8 12, 9 18" stroke="#C97B3D" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </span>
+      Etuen
+    </div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#name">Our Name</a></li>
+      <li><a href="#horizon">What's Next</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get a Free Audit</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow mono">Digital Foundations for Small Firms</div>
+    <h1>Small by size.<br><em>Bold by design.</em></h1>
+    <p class="hero-sub">
+      We give small law firms and independent practices the same digital
+      footing as the firms twice their size — domain to launch, brand to bandwidth —
+      then keep raising the bar as AI reshapes the field.
+    </p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Get a Free Digital Audit</a>
+      <a href="#services" class="btn-ghost">View Services</a>
+    </div>
+  </div>
+  <div class="flight-scene">
+    <svg viewBox="0 0 1140 220" preserveAspectRatio="xMidYMid meet">
+      <path class="flight-path" d="M 60 190 Q 400 160 720 40" />
+      <g class="big-bird" transform="translate(760, 20)">
+        <path d="M0 20 C 14 8, 26 4, 44 0 C 30 10, 22 18, 20 30 C 16 20, 8 14, 0 20 Z" />
+      </g>
+      <g class="small-bird" transform="translate(40, 150)">
+        <path d="M0 10 C 8 3, 15 1, 24 0 C 16 6, 11 11, 10 18 C 8 11, 4 8, 0 10 Z" />
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section class="our-name" id="name">
+  <div class="wrap">
+    <div class="name-grid">
+      <div class="name-visual">
+        <svg class="flight-mark" viewBox="0 0 220 220">
+          <path class="big" d="M100 40 C 130 20, 160 12, 200 6 C 165 30, 140 50, 132 84 C 118 55, 130 40, 100 40 Z" />
+          <path class="small" d="M20 170 C 44 148, 62 140, 88 132 C 68 152, 56 168, 54 190 C 44 166, 34 156, 20 170 Z" />
+        </svg>
+      </div>
+      <div class="name-copy">
+        <span class="mono">Our Name</span>
+        <h2>Named after a bird that doesn't know it's small.</h2>
+        <p>
+          <strong>Etuen</strong> comes from <em>Ituen</em>, an Ibibio word from southeastern
+          Nigeria for a hawk known for one trait above all: though smaller than the birds
+          around it, it chases down the bigger ones anyway. We spell it Etuen for clearer
+          pronunciation — the meaning stays exactly the same.
+        </p>
+        <p>
+          That's the whole idea behind this company. Small firms shouldn't have to
+          wait until they're bigger to look, work, and compete like they belong at
+          the top of their field. We build the digital footing that lets you fly
+          like you already do.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">Where You Start</span>
+      <h2>Three ways onto level ground.</h2>
+      <p>Every package gets your firm a credible, secure digital presence.
+         The difference is how far we take your brand and visibility on day one.</p>
+    </div>
+    <div class="service-grid">
+
+      <div class="service-card">
+        <div class="service-tag">Foundation</div>
+        <h3>Launch</h3>
+        <div class="service-price">From $1,500 <span>/ one-time</span></div>
+        <p class="service-desc">For the firm that needs to look legitimate online, fast.</p>
+        <ul class="service-list">
+          <li>Domain, DNS & SSL setup</li>
+          <li>Microsoft 365 & professional email</li>
+          <li>Responsive Wix website, up to 3 pages</li>
+          <li>Contact form</li>
+          <li>1-hour training session</li>
+        </ul>
+        <a href="#contact" class="service-link">Start here <span class="arrow">→</span></a>
+      </div>
+
+      <div class="service-card featured">
+        <div class="service-tag">Most Requested</div>
+        <h3>Presence</h3>
+        <div class="service-price">From $2,850 <span>/ one-time</span></div>
+        <p class="service-desc">Everything in Launch, plus a real brand and search visibility.</p>
+        <ul class="service-list">
+          <li>Everything in Launch, up to 6 pages</li>
+          <li>Custom logo, 2 concepts</li>
+          <li>Letterhead & branded documents</li>
+          <li>Basic SEO setup</li>
+          <li>30 days post-launch support</li>
+        </ul>
+        <a href="#contact" class="service-link">Choose Presence <span class="arrow">→</span></a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-tag">Full Advantage</div>
+        <h3>Edge</h3>
+        <div class="service-price">From $4,500 <span>/ one-time</span></div>
+        <p class="service-desc">A complete brand identity and hands-on support to match it.</p>
+        <ul class="service-list">
+          <li>Everything in Presence, up to 10 pages</li>
+          <li>3 logo concepts + full brand kit</li>
+          <li>Local SEO & Google Business Profile</li>
+          <li>2 training sessions + written guide</li>
+          <li>60 days post-launch support</li>
+        </ul>
+        <a href="#contact" class="service-link">Get the Edge <span class="arrow">→</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="approach" id="approach">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">How We Work</span>
+      <h2>Three steps. No jargon.</h2>
+    </div>
+    <div class="approach-grid">
+      <div class="step">
+        <span class="step-num mono">01 — Audit</span>
+        <h3>See where you stand</h3>
+        <p>We review your current setup — or lack of one — and map exactly what's needed to bring you to a competitive baseline.</p>
+      </div>
+      <div class="step">
+        <span class="step-num mono">02 — Build</span>
+        <h3>We set it all up</h3>
+        <p>Domain, email, website, brand, security — handled end to end, so you're not toggling between five vendors.</p>
+      </div>
+      <div class="step">
+        <span class="step-num mono">03 — Launch & Train</span>
+        <h3>You stay in control</h3>
+        <p>We hand it over with a training session so your team can manage day-to-day without calling us for every small change.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="next-horizon" id="horizon">
+  <div class="wrap">
+    <div class="nh-grid">
+      <div>
+        <span class="mono">On The Horizon</span>
+        <h2>The next edge is already coming into view.</h2>
+        <p>Once your foundation is solid, we go further — bringing the same
+           AI and analytics capability that large firms are quietly adopting
+           down to a scale and price that fits yours.</p>
+      </div>
+      <div class="nh-panel">
+        <span class="mono">Roadmap — Phase 2</span>
+        <ul class="nh-list">
+          <li><span class="tag">AI</span> Client intake & chat automation</li>
+          <li><span class="tag">AI</span> Document review & summarization</li>
+          <li><span class="tag">DATA</span> Client & performance dashboards</li>
+          <li><span class="tag">AUTO</span> Scheduling & workflow automation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="contact">
+  <div class="wrap">
+    <h2>Ready to see your firm on level ground?</h2>
+    <p>A free digital audit takes 15 minutes and tells you exactly where you stand.</p>
+    <div class="cta-btns">
+      <a href="mailto:info@etuen.com" class="btn-dark">Email info@etuen.com</a>
+      <a href="#" class="btn-outline">Book a Call</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-mark">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M2 17 C6 13, 8 9, 11 4" stroke="#C97B3D" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M11 4 C13 8, 16 10, 22 11" stroke="#C97B3D" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M11 4 C9 8, 8 12, 9 18" stroke="#C97B3D" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </span>
+          Etuen
+        </div>
+        <p>Digital solutions for small firms navigating a rapidly evolving digital world.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Site</h4>
+          <a href="#services">Services</a>
+          <a href="#approach">Approach</a>
+          <a href="#name">Our Name</a>
+          <a href="#horizon">What's Next</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:hello@etuen.com">hello@etuen.com</a>
+          <a href="#contact">Book a call</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Etuen. All rights reserved.</span>
+      <span>Serving small law firms & independent practices.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
