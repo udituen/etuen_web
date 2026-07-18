@@ -11,6 +11,53 @@
 </head>
 <body>
 
+<svg style="display:none">
+  <symbol id="icon-search" viewBox="0 0 24 24">
+    <circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.7"/>
+    <line x1="15.3" y1="15.3" x2="21" y2="21" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-wrench" viewBox="0 0 24 24">
+    <path d="M14.7 6.3a4.5 4.5 0 0 1-5.7 5.7L4.3 16.7a2 2 0 0 0 2.8 2.8L11.8 14.7a4.5 4.5 0 0 1 5.7-5.7l-3 3-1.7-1.7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon-rocket" viewBox="0 0 24 24">
+    <path d="M12 2 C15 5, 16 9, 15 14 L9 14 C8 9, 9 5, 12 2 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M9 14 L6 18 L9 17 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M15 14 L18 18 L15 17 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M10 20 L12 22.5 L14 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="12" cy="8.5" r="1.4" fill="currentColor"/>
+  </symbol>
+  <symbol id="icon-mail" viewBox="0 0 24 24">
+    <rect x="3" y="5.5" width="18" height="13" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <path d="M4 6.5 L12 13 L20 6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24">
+    <path d="M4 12.5 L9.5 18 L20 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon-cpu" viewBox="0 0 24 24">
+    <rect x="6.5" y="6.5" width="11" height="11" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    <rect x="10" y="10" width="4" height="4" fill="none" stroke="currentColor" stroke-width="1.3"/>
+    <line x1="9" y1="2.5" x2="9" y2="6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="15" y1="2.5" x2="15" y2="6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="9" y1="18" x2="9" y2="21.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="15" y1="18" x2="15" y2="21.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="2.5" y1="9" x2="6" y2="9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="2.5" y1="15" x2="6" y2="15" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="18" y1="9" x2="21.5" y2="9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="18" y1="15" x2="21.5" y2="15" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-database" viewBox="0 0 24 24">
+    <ellipse cx="12" cy="5.5" rx="7.5" ry="3" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    <path d="M4.5 5.5 L4.5 18.5 C4.5 20.2 7.9 21.5 12 21.5 C16.1 21.5 19.5 20.2 19.5 18.5 L19.5 5.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    <path d="M4.5 12 C4.5 13.7 7.9 15 12 15 C16.1 15 19.5 13.7 19.5 12" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  </symbol>
+  <symbol id="icon-loop" viewBox="0 0 24 24">
+    <path d="M4 12 a8 8 0 0 1 14-5.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M18 3.5 L18 7.5 L14 7.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M20 12 a8 8 0 0 1-14 5.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M6 20.5 L6 16.5 L10 16.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+</svg>
+
 <header>
   <nav class="nav">
     <div class="logo">
@@ -57,13 +104,29 @@
     </div>
   </div>
   <div class="flight-scene">
-    <svg viewBox="0 0 1140 220" preserveAspectRatio="xMidYMid meet">
-      <path class="flight-path" d="M 60 190 Q 400 160 720 40" />
-      <g class="big-bird" transform="translate(760, 20)">
+    <svg viewBox="0 0 1140 260" preserveAspectRatio="xMidYMid meet">
+      <g class="scale-mark">
+        <path d="M90 232 L90 92" />
+        <path d="M28 92 L160 92" />
+        <path d="M28 92 L18 142" />
+        <path d="M28 92 L38 142" />
+        <path d="M160 92 L150 142" />
+        <path d="M160 92 L172 142" />
+        <ellipse cx="28" cy="146" rx="15" ry="4.5" />
+        <ellipse cx="160" cy="146" rx="15" ry="4.5" />
+        <path d="M62 232 L118 232" />
+      </g>
+      <path class="flight-path" d="M 60 200 Q 400 170 720 60 Q 900 20 1080 30" />
+      <g class="big-bird" transform="translate(760, 40)">
         <path d="M0 20 C 14 8, 26 4, 44 0 C 30 10, 22 18, 20 30 C 16 20, 8 14, 0 20 Z" />
       </g>
       <g class="small-bird">
         <path d="M0 10 C 8 3, 15 1, 24 0 C 16 6, 11 11, 10 18 C 8 11, 4 8, 0 10 Z" />
+      </g>
+      <g class="ai-marker" transform="translate(1080, 28)">
+        <circle class="ai-glow" cx="0" cy="0" r="13" />
+        <circle class="ai-dot" cx="0" cy="0" r="4" />
+        <text class="ai-label" x="0" y="24" text-anchor="middle">AI</text>
       </g>
     </svg>
   </div>
@@ -114,11 +177,11 @@
         <div class="service-price">From $1,500 <span>/ one-time</span></div>
         <p class="service-desc">For the business that needs to look legitimate online, fast.</p>
         <ul class="service-list">
-          <li>Domain, DNS & SSL setup</li>
-          <li>Microsoft 365 & professional email</li>
-          <li>Responsive Wix website, up to 3 pages</li>
-          <li>Contact form</li>
-          <li>1-hour training session</li>
+          <li><svg><use href="#icon-check"/></svg><span>Domain, DNS & SSL setup</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>Microsoft 365 & professional email</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>Responsive website, up to 3 pages</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>Contact form</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>1-hour training session</span></li>
         </ul>
         <a href="#contact" class="service-link">Start here <span class="arrow">→</span></a>
       </div>
@@ -129,11 +192,11 @@
         <div class="service-price">From $2,850 <span>/ one-time</span></div>
         <p class="service-desc">Everything in Launch, plus a real brand and search visibility.</p>
         <ul class="service-list">
-          <li>Everything in Launch, up to 6 pages</li>
-          <li>Custom logo, 2 concepts</li>
-          <li>Letterhead & branded documents</li>
-          <li>Basic SEO setup</li>
-          <li>30 days post-launch support</li>
+          <li><svg><use href="#icon-check"/></svg><span>Everything in Launch, up to 6 pages</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>Custom logo, 2 concepts</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>Letterhead & branded documents</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>Basic SEO setup</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>30 days post-launch support</span></li>
         </ul>
         <a href="#contact" class="service-link">Choose Presence <span class="arrow">→</span></a>
       </div>
@@ -144,15 +207,34 @@
         <div class="service-price">From $4,500 <span>/ one-time</span></div>
         <p class="service-desc">A complete brand identity and hands-on support to match it.</p>
         <ul class="service-list">
-          <li>Everything in Presence, up to 10 pages</li>
-          <li>3 logo concepts + full brand kit</li>
-          <li>Local SEO & Google Business Profile</li>
-          <li>2 training sessions + written guide</li>
-          <li>60 days post-launch support</li>
+          <li><svg><use href="#icon-check"/></svg><span>Everything in Presence, up to 10 pages</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>3 logo concepts + full brand kit</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>Local SEO & Google Business Profile</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>2 training sessions + written guide</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>60 days post-launch support</span></li>
         </ul>
         <a href="#contact" class="service-link">Get the Edge <span class="arrow">→</span></a>
       </div>
 
+    </div>
+
+    <div class="care-plan">
+      <div class="care-plan-info">
+        <div class="service-tag">Ongoing</div>
+        <h3>Care & Support Plan</h3>
+        <p class="service-desc">Once your included support window ends, keep everything running without lifting a finger.</p>
+        <ul class="care-plan-list">
+          <li><svg><use href="#icon-check"/></svg><span>Software & security updates</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>Minor text and content edits</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>Hosting & domain management</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>Priority email support</span></li>
+        </ul>
+      </div>
+      <div class="care-plan-price">
+        <div class="care-plan-amount">$99–$199<span>/month</span></div>
+        <p class="care-plan-note">Starts after your included 30- or 60-day support window ends.</p>
+        <a href="#contact" class="service-link">Add Care & Support <span class="arrow">→</span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -165,16 +247,19 @@
     </div>
     <div class="approach-grid">
       <div class="step">
+        <svg class="step-icon"><use href="#icon-search"/></svg>
         <span class="step-num mono">01 — Audit</span>
         <h3>See where you stand</h3>
         <p>We review your current setup — or lack of one — and map exactly what's needed to bring you to a competitive baseline.</p>
       </div>
       <div class="step">
+        <svg class="step-icon"><use href="#icon-wrench"/></svg>
         <span class="step-num mono">02 — Build</span>
         <h3>We set it all up</h3>
         <p>Domain, email, website, brand, security — handled end to end, so you're not toggling between five vendors.</p>
       </div>
       <div class="step">
+        <svg class="step-icon"><use href="#icon-rocket"/></svg>
         <span class="step-num mono">03 — Launch & Train</span>
         <h3>You stay in control</h3>
         <p>We hand it over with a training session so your team can manage day-to-day without calling us for every small change.</p>
@@ -196,10 +281,10 @@
       <div class="nh-panel">
         <span class="mono">Roadmap — Phase 2</span>
         <ul class="nh-list">
-          <li><span class="tag">AI</span> Client intake & chat automation</li>
-          <li><span class="tag">AI</span> Document review & summarization</li>
-          <li><span class="tag">DATA</span> Client & performance dashboards</li>
-          <li><span class="tag">AUTO</span> Scheduling & workflow automation</li>
+          <li><span class="tag"><svg><use href="#icon-cpu"/></svg>AI</span> Client intake & chat automation</li>
+          <li><span class="tag"><svg><use href="#icon-cpu"/></svg>AI</span> Document review & summarization</li>
+          <li><span class="tag"><svg><use href="#icon-database"/></svg>DATA</span> Client & performance dashboards</li>
+          <li><span class="tag"><svg><use href="#icon-loop"/></svg>AUTO</span> Scheduling & workflow automation</li>
         </ul>
       </div>
     </div>
@@ -251,7 +336,7 @@
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
-          <a href="mailto:info@etuen.com">info@etuen.com</a>
+          <a href="mailto:info@etuen.com"><svg class="inline-icon"><use href="#icon-mail"/></svg>info@etuen.com</a>
           <a href="#contact">Book a call</a>
         </div>
       </div>
