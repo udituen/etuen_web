@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Etuen Consulting | Digital Foundations for Small Business </title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="icon" href="assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg style="display:none">
+  <symbol id="icon-search" viewBox="0 0 24 24">
+    <circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.7"/>
+    <line x1="15.3" y1="15.3" x2="21" y2="21" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-wrench" viewBox="0 0 24 24">
+    <path d="M14.7 6.3a4.5 4.5 0 0 1-5.7 5.7L4.3 16.7a2 2 0 0 0 2.8 2.8L11.8 14.7a4.5 4.5 0 0 1 5.7-5.7l-3 3-1.7-1.7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon-rocket" viewBox="0 0 24 24">
+    <path d="M12 2 C15 5, 16 9, 15 14 L9 14 C8 9, 9 5, 12 2 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M9 14 L6 18 L9 17 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M15 14 L18 18 L15 17 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M10 20 L12 22.5 L14 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="12" cy="8.5" r="1.4" fill="currentColor"/>
+  </symbol>
+  <symbol id="icon-mail" viewBox="0 0 24 24">
+    <rect x="3" y="5.5" width="18" height="13" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <path d="M4 6.5 L12 13 L20 6.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24">
+    <path d="M4 12.5 L9.5 18 L20 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="icon-cpu" viewBox="0 0 24 24">
+    <rect x="6.5" y="6.5" width="11" height="11" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    <rect x="10" y="10" width="4" height="4" fill="none" stroke="currentColor" stroke-width="1.3"/>
+    <line x1="9" y1="2.5" x2="9" y2="6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="15" y1="2.5" x2="15" y2="6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="9" y1="18" x2="9" y2="21.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="15" y1="18" x2="15" y2="21.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="2.5" y1="9" x2="6" y2="9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="2.5" y1="15" x2="6" y2="15" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="18" y1="9" x2="21.5" y2="9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+    <line x1="18" y1="15" x2="21.5" y2="15" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="icon-database" viewBox="0 0 24 24">
+    <ellipse cx="12" cy="5.5" rx="7.5" ry="3" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    <path d="M4.5 5.5 L4.5 18.5 C4.5 20.2 7.9 21.5 12 21.5 C16.1 21.5 19.5 20.2 19.5 18.5 L19.5 5.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    <path d="M4.5 12 C4.5 13.7 7.9 15 12 15 C16.1 15 19.5 13.7 19.5 12" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  </symbol>
+  <symbol id="icon-loop" viewBox="0 0 24 24">
+    <path d="M4 12 a8 8 0 0 1 14-5.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M18 3.5 L18 7.5 L14 7.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M20 12 a8 8 0 0 1-14 5.3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    <path d="M6 20.5 L6 16.5 L10 16.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+</svg>
+
+<header>
+  <nav class="nav">
+    <div class="logo">
+      <span class="logo-mark">
+        <svg viewBox="0 0 40 46" fill="none">
+          <path d="M20 16 C15 8, 9 4, 2 3 C7 9, 10 13, 12 20 C 14 15, 17 14, 20 16 Z" stroke="#F0EBE0" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M20 16 C25 8, 31 4, 38 3 C33 9, 30 13, 28 20 C 26 15, 23 14, 20 16 Z" stroke="#F0EBE0" stroke-width="1.3" stroke-linejoin="round"/>
+          <circle cx="9" cy="7" r="0.9" fill="#F0EBE0"/>
+          <circle cx="5" cy="10" r="0.9" fill="#F0EBE0"/>
+          <path d="M20 16 C18 20, 18 25, 20 29 C22 25, 22 20, 20 16 Z" stroke="#F0EBE0" stroke-width="1.3" stroke-linejoin="round"/>
+          <path d="M19 29 L17 34" stroke="#F0EBE0" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M21 29 L23 34" stroke="#F0EBE0" stroke-width="1.3" stroke-linecap="round"/>
+          <circle cx="20" cy="38" r="4" fill="#C97B3D"/>
+        </svg>
+      </span>
+      <span class="logo-text">
+        <span class="brand-word">Etuen</span>
+        <span class="brand-sub">C<span class="o-dot"></span>nsulting</span>
+      </span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#name">Our Story</a></li>
+      <li><a href="#horizon">What's Next</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get a Free Audit</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow mono">Digital Foundations for Small Businesses</div>
+    <h1>Small by size.<br><em>Bold by design.</em></h1>
+    <p class="hero-sub">
+      We give small businesses the same digital
+      footing as companies twice their size, from domain to launch and brand to bandwidth,
+      then keep raising the bar as AI reshapes the field.
+    </p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Get a Free Digital Audit</a>
+      <a href="#services" class="btn-ghost">View Services</a>
+    </div>
+  </div>
+  <div class="flight-scene">
+    <svg viewBox="0 0 1140 260" preserveAspectRatio="xMidYMid meet">
+      <path class="flight-path" d="M 60 200 Q 400 170 720 60 Q 900 20 1080 30" />
+      <g class="big-bird" transform="translate(760, 40)">
+        <path d="M0 20 C 14 8, 26 4, 44 0 C 30 10, 22 18, 20 30 C 16 20, 8 14, 0 20 Z" />
+      </g>
+      <g class="small-bird">
+        <path d="M0 10 C 8 3, 15 1, 24 0 C 16 6, 11 11, 10 18 C 8 11, 4 8, 0 10 Z" />
+      </g>
+      <g class="ai-marker" transform="translate(1080, 28)">
+        <circle class="ai-glow" cx="0" cy="0" r="13" />
+        <circle class="ai-dot" cx="0" cy="0" r="4" />
+        <text class="ai-label" x="0" y="24" text-anchor="middle"></text>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section class="our-name" id="name">
+  <div class="wrap">
+    <div class="name-grid">
+      <div class="name-visual">
+        <svg class="flight-mark" viewBox="0 0 220 220">
+          <path class="big" d="M100 40 C 130 20, 160 12, 200 6 C 165 30, 140 50, 132 84 C 118 55, 130 40, 100 40 Z" />
+          <path class="small" d="M20 170 C 44 148, 62 140, 88 132 C 68 152, 56 168, 54 190 C 44 166, 34 156, 20 170 Z" />
+        </svg>
+      </div>
+      <div class="name-copy">
+        <span class="mono">Our Story</span>
+        <h2>Small businesses deserve the same digital footing as everyone else.</h2>
+        <p class="name-lead">
+          Our mission is simple: give small and mid-sized organizations enterprise-grade
+          digital capability, at small-business speed and cost, so technology becomes a
+          day-one advantage instead of a someday project.
+        </p>
+        <p>
+        That belief is where our name comes from. <strong>Etuen</strong> <span class="pronounce">(ee-TWEN)</span> comes from
+        <em>Ituen</em>, an Ibibio word from southeastern Nigeria for a bird known for one
+        trait above all: though smaller than the birds around it, it chases down the
+        bigger ones anyway. We spell it Etuen for clearer pronunciation, the meaning
+        stays exactly the same.
+        </p>
+        <p>
+          Small businesses shouldn't have to wait until they're bigger to look, work, and
+          compete like they belong at the top of their field. We build the digital footing
+          that lets you fly like you already do.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">Where You Start</span>
+      <h2>Three ways onto level ground.</h2>
+      <p>Every package gets your business a credible, secure digital presence.
+         The difference is how far we take your brand and visibility on day one.</p>
+    </div>
+    <div class="service-grid">
+
+      <div class="service-card">
+        <div class="service-tag">Foundation</div>
+        <h3>Launch</h3>
+        <div class="service-price">From $1,500 <span>/ one-time</span></div>
+        <p class="service-desc">For the business that needs to look legitimate online, fast.</p>
+        <ul class="service-list">
+          <li><svg><use href="#icon-check"/></svg><span>Domain, DNS & SSL setup</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>Microsoft 365 & professional email</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>Responsive website, up to 3 pages</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>Contact form</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>1-hour training session</span></li>
+        </ul>
+        <a href="#contact" class="service-link">Start here <span class="arrow">→</span></a>
+      </div>
+
+      <div class="service-card featured">
+        <div class="service-tag">Most Requested</div>
+        <h3>Presence</h3>
+        <div class="service-price">From $2,850 <span>/ one-time</span></div>
+        <p class="service-desc">Everything in Launch, plus a real brand and search visibility.</p>
+        <ul class="service-list">
+          <li><svg><use href="#icon-check"/></svg><span>Everything in Launch, up to 6 pages</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>Custom logo, 2 concepts</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>Letterhead & branded documents</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>Basic SEO setup</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>30 days post-launch support</span></li>
+        </ul>
+        <a href="#contact" class="service-link">Choose Presence <span class="arrow">→</span></a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-tag">Full Advantage</div>
+        <h3>Edge</h3>
+        <div class="service-price">From $4,500 <span>/ one-time</span></div>
+        <p class="service-desc">A complete brand identity and hands-on support to match it.</p>
+        <ul class="service-list">
+          <li><svg><use href="#icon-check"/></svg><span>Everything in Presence, up to 10 pages</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>3 logo concepts + full brand kit</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>Local SEO & Google Business Profile</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>2 training sessions + written guide</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>60 days post-launch support</span></li>
+        </ul>
+        <a href="#contact" class="service-link">Get the Edge <span class="arrow">→</span></a>
+      </div>
+
+    </div>
+
+    <div class="care-plan">
+      <div class="care-plan-info">
+        <div class="service-tag">Ongoing</div>
+        <h3>Care & Support Plan</h3>
+        <p class="service-desc">Once your included support window ends, keep everything running without lifting a finger.</p>
+        <ul class="care-plan-list">
+          <li><svg><use href="#icon-check"/></svg><span>Software & security updates</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>Minor text and content edits</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>Hosting & domain management</span></li>
+          <li><svg><use href="#icon-check"/></svg><span>Priority email support</span></li>
+        </ul>
+      </div>
+      <div class="care-plan-price">
+        <div class="care-plan-amount">$99–$199<span>/month</span></div>
+        <p class="care-plan-note">Starts after your included 30- or 60-day support window ends.</p>
+        <a href="#contact" class="service-link">Add Care & Support <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="approach" id="approach">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="mono">How We Work</span>
+      <h2>Three steps. No jargon.</h2>
+    </div>
+    <div class="approach-grid">
+      <div class="step">
+        <svg class="step-icon"><use href="#icon-search"/></svg>
+        <span class="step-num mono">01 — Audit</span>
+        <h3>See where you stand</h3>
+        <p>We review your current setup — or lack of one — and map exactly what's needed to bring you to a competitive baseline.</p>
+      </div>
+      <div class="step">
+        <svg class="step-icon"><use href="#icon-wrench"/></svg>
+        <span class="step-num mono">02 — Build</span>
+        <h3>We set it all up</h3>
+        <p>Domain, email, website, brand, security — handled end to end, so you're not toggling between five vendors.</p>
+      </div>
+      <div class="step">
+        <svg class="step-icon"><use href="#icon-rocket"/></svg>
+        <span class="step-num mono">03 — Launch & Train</span>
+        <h3>You stay in control</h3>
+        <p>We hand it over with a training session so your team can manage day-to-day without calling us for every small change.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="next-horizon" id="horizon">
+  <div class="wrap">
+    <div class="nh-grid">
+      <div>
+        <span class="mono">On The Horizon</span>
+        <h2>The next edge is already coming into view.</h2>
+        <p>Once your foundation is solid, we go further — bringing the same
+           AI and analytics capability that large companies are quietly adopting
+           down to a scale and price that fits yours.</p>
+      </div>
+      <div class="nh-panel">
+        <span class="mono">Roadmap — Phase 2</span>
+        <ul class="nh-list">
+          <li><span class="tag"><svg><use href="#icon-cpu"/></svg>AI</span> Client intake & chat automation</li>
+          <li><span class="tag"><svg><use href="#icon-cpu"/></svg>AI</span> Document review & summarization</li>
+          <li><span class="tag"><svg><use href="#icon-database"/></svg>DATA</span> Client & performance dashboards</li>
+          <li><span class="tag"><svg><use href="#icon-loop"/></svg>AUTO</span> Scheduling & workflow automation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="contact">
+  <div class="wrap">
+    <h2>Ready to see your business on level ground?</h2>
+    <p>A free digital audit takes 15 minutes and tells you exactly where you stand.</p>
+    <div class="cta-btns">
+      <a href="mailto:info@etuen.com" class="btn-dark">Email info@etuen.com</a>
+      <a href="#" class="btn-outline">Book a Call</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-mark">
+            <svg viewBox="0 0 40 46" fill="none">
+              <path d="M20 16 C15 8, 9 4, 2 3 C7 9, 10 13, 12 20 C 14 15, 17 14, 20 16 Z" stroke="#F0EBE0" stroke-width="1.3" stroke-linejoin="round"/>
+              <path d="M20 16 C25 8, 31 4, 38 3 C33 9, 30 13, 28 20 C 26 15, 23 14, 20 16 Z" stroke="#F0EBE0" stroke-width="1.3" stroke-linejoin="round"/>
+              <circle cx="9" cy="7" r="0.9" fill="#F0EBE0"/>
+              <circle cx="5" cy="10" r="0.9" fill="#F0EBE0"/>
+              <path d="M20 16 C18 20, 18 25, 20 29 C22 25, 22 20, 20 16 Z" stroke="#F0EBE0" stroke-width="1.3" stroke-linejoin="round"/>
+              <path d="M19 29 L17 34" stroke="#F0EBE0" stroke-width="1.3" stroke-linecap="round"/>
+              <path d="M21 29 L23 34" stroke="#F0EBE0" stroke-width="1.3" stroke-linecap="round"/>
+              <circle cx="20" cy="38" r="4" fill="#C97B3D"/>
+            </svg>
+          </span>
+          <span class="logo-text">
+            <span class="brand-word">Etuen</span>
+            <span class="brand-sub">C<span class="o-dot"></span>nsulting</span>
+          </span>
+        </div>
+        <p>Digital solutions for small businesses navigating a rapidly evolving digital world.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Site</h4>
+          <a href="#services">Services</a>
+          <a href="#approach">Approach</a>
+          <a href="#name">Our Story</a>
+          <a href="#horizon">What's Next</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:info@etuen.com"><svg class="inline-icon"><use href="#icon-mail"/></svg>info@etuen.com</a>
+          <a href="#contact">Book a call</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Etuen Consulting Inc. All rights reserved.</span>
+      <span>Serving small businesses across every industry.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
