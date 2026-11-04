@@ -5,6 +5,9 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+index_v1.html
+index_v3.html
+
 # C extensions
 *.so
 
